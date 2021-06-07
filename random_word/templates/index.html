@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sección que carga el contenido estático de la página web DJango -->
+    {% load static %}
+    <!-- Sección que carga el contenido de Boostrap Ver. 5.xx -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>DOCUMENTO BASE</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5 text-center">
+        <h1>Django Projects</h1>
+        <h3>Random word generator</h3>
+      </div>
+      <div class="row mt-3 text-center">
+        
+        <p>Random Word - Número de intentos : {{request.session.counter}} </p>
+      </div>
+      <div class="row mt-5 p-4 bg-primary text-center text-light">
+        <h1> {{palabra_random}}</h1>
+      </div>
+      <div class="row mt-5 p-4  text-center">
+        <form action="" method="post">
+          {% csrf_token %}
+          <button class="btn btn-primary" type="submit">Generar palabra</button>
+        </form>
+        <a href="random_word/reset" target="_self"><button class="btn btn-primary mt-2">Limpiar todo</button></a>
+      </div>
+      <div class="row mt-5 p-4  text-center">
+        
+      </div>
+    </div>
+
+    <!-- Sección que carga el adicional de JavaScript Bootstrap 5.xx -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
