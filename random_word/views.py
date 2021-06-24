@@ -24,3 +24,4 @@ def reset(request):
     random_word = "GENERADOR DE PALABRAS"
     request.session['counter']=0
     return redirect("/random_word")
+
